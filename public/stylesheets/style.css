@@ -618,7 +618,10 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
 /*--product-starts--*/
 .product-left {
     text-align: center;
-
+		padding-top: 2px;
+}
+.product-lef{
+	padding-top: 10px;
 }
 .product-main {
     padding: 1em 0px 2.7em 0px;
@@ -648,7 +651,7 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
     margin-right: 4px;
     vertical-align: middle;
 }
-.product-left:hover .product-bottom h4 i{
+.product-lef:hover .product-bottom h4 i{
 	background: url(../images/cart-3.png) no-repeat;
 }
 .product-bottom {
@@ -674,7 +677,7 @@ img.zoom-img {
     -moz-transition-duration: 250ms;
 	margin: 0 auto;
 }
-.product-left:hover img.zoom-img{
+.product-lef:hover img.zoom-img{
     -webkit-transform: scale(1.05);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 700ms;
@@ -690,7 +693,7 @@ a.mask {
     display: block;
     padding: 12px 0px;
 }
-.product-left:hover .product-bottom h3{
+.product-lef:hover .product-bottom h3{
 	color:#73B6E1;
 	transition: 0.5s all ease;
     -webkit-transition: 0.5s all ease;
@@ -698,7 +701,7 @@ a.mask {
     -o-transition: 0.5s all ease;
     -ms-transition: 0.5s all ease;
 }
-.product-left:hover .product-bottom h4 span{
+.product-lef:hover .product-bottom h4 span{
 	color:#73B6E1;
 	transition: 0.5s all ease;
     -webkit-transition: 0.5s all ease;
@@ -706,7 +709,7 @@ a.mask {
     -o-transition: 0.5s all ease;
     -ms-transition: 0.5s all ease;
 }
-.product-left:hover .product-main{
+.product-lef:hover .product-main{
 	border:1px solid #73B6E1;
 	transition: 0.5s all ease;
     -webkit-transition: 0.5s all ease;
@@ -714,7 +717,7 @@ a.mask {
     -o-transition: 0.5s all ease;
     -ms-transition: 0.5s all ease;
 }
-.product-left:hover .srch{
+.product-lef:hover .srch{
 	display:block;
 }
 .srch {
@@ -2450,9 +2453,7 @@ figure.effect-bubba p {
 .product-main {
     padding: 10px 0px 1.5em 0px;
 }
-.product-left {
-    padding: 0 6px;
-}
+
 .srch {
     left: 7px;
 }
@@ -2699,7 +2700,7 @@ figure.effect-bubba p {
     font-size: 15px;
 }
 .product-left {
-    padding: 0 10px;
+    padding: 10px 0 10px;
     width: 50%;
 }
 .product-left:nth-child(3),.product-left:nth-child(4){
@@ -3068,3 +3069,11 @@ ul.tag-men {
 }
 }
 /*--media-quaries-end-here--*/
+
+.pinky-img img{
+  max-height: 200px;
+}
+
+.caption{
+	text-align: center;
+}
