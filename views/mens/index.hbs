@@ -1,0 +1,31 @@
+
+<!--prdt-starts-->
+  <div class="container">
+        {{# each products }}
+        <div class="">
+          {{# each this }}
+
+          <div class="col-md-3 col-sm-12 product-lef">
+            <div class="product-main simpleCart_shelfItem">
+              <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="{{this.imagePath}}" alt="" /></a>
+              <div class="product-bottom">
+                <h3>{{this.title}}</h3>
+                <p>Explore Now</p>
+                <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">${{this.price}}</span></h4>
+              </div>
+              <div class="srch">
+                <span>SALE</span>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+
+
+        </div>
+        {{/each}}
+
+
+
+  </div>
+
+<!--product-end-->
