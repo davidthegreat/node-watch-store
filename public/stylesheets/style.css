@@ -152,11 +152,11 @@ span.simpleCart_total {
 .box {
     float: left;
     width: 11%;
-    margin-right: 10%;
+    margin-right: 1%;
 }
 .box1{
 	float:left;
-	width:20.5%;
+	width:25.5%;
 }
 .cssmenu ul{
 	float:right;
@@ -3076,4 +3076,8 @@ ul.tag-men {
 
 .caption{
 	text-align: center;
+}
+
+.logss{
+	color:white;
 }
