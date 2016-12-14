@@ -58,7 +58,43 @@ router.get('/cart', function(req, res, next){
 	}
 	var cart = new Cart(req.session.cart);
 	res.render('shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice})
-})
+});
+
+router.get('/checkout', function(req, res, next){
+  if(!req.session.cart){
+		return res.redirect('/cart')
+	}
+	var cart = new Cart(req.session.cart);
+	var errMsg = req.flash('error')[0];
+	res.render('checkout', {total: cart.totalPrice, errMsg: errMsg, noError: !errMsg});
+});
+
+router.post('/checkout', function(req, res, next){
+  if(!req.session.cart){
+		return res.redirect('/cart')
+	}
+
+  var cart = new Cart(req.session.cart);
+
+  var stripe = require("stripe")(
+    SECRET_KEY
+  );
+
+  stripe.charges.create({
+    amount: cart.totalPrice * 100,
+    currency: "usd",
+    source: req.body.stripeToken, // obtained with Stripe.js
+    description: "Luxury Watch"
+  }, function(err, charge) {
+    if (err) {
+      req.flash('error', err.message);
+      return res.redirect('/checkout');
+    }
+    req.flash('success', 'Thank You for your purchase!');
+    req.session.cart = null;
+    res.redirect('/users/MyAcount');
+  });
+});
 
 
 module.exports = router;

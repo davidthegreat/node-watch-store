@@ -8,7 +8,8 @@ router.use(csrfProtection);
 
 /* GET users Acount listing. */
 router.get('/MyAcount', isLoggedIn, function(req, res, next){
-  res.render('user/profile');
+  var successMsg = req.flash('success')[0];
+  res.render('user/profile',{tile:'Watch Store', successMsg: successMsg, noMessages: !successMsg} );
 });
 
 /* GET users registration listing. */
@@ -20,7 +21,7 @@ res.render('user/signup',{csrfToken: req.csrfToken(), messages: messages, hasErr
 /* post users registration  listing. */
 router.post('/register', notLoggedIn, passport.authenticate('local.signup',{
   successRedirect: '/',
-  failureRedirect: '/register',
+  failureRedirect: '/users/register',
   failureFlash: true
 }));
 
@@ -33,7 +34,7 @@ router.get('/signin', notLoggedIn, function(req, res, next) {
 /* post users signin  listing. */
 router.post('/signin',notLoggedIn,  passport.authenticate('local.signin',{
   successRedirect: '/',
-  failureRedirect: '/signin',
+  failureRedirect: '/users/signin',
   failureFlash: true
 }));
 
