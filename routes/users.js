@@ -6,10 +6,24 @@ var passport = require('passport')
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
+var Order = require('../app/models/order');
+var Cart = require('../app/models/cart');
+
+
 /* GET users Acount listing. */
 router.get('/MyAcount', isLoggedIn, function(req, res, next){
   var successMsg = req.flash('success')[0];
-  res.render('user/profile',{tile:'Watch Store', successMsg: successMsg, noMessages: !successMsg} );
+  Order.find({user: req.user}, function(err, orders){
+    if (err) {
+        return res.write('Error!');
+    }
+    var cart;
+    orders.forEach(function(order) {
+        cart = new Cart(order.cart);
+        order.items = cart.generateArray();
+    });
+    res.render('user/profile',{tile:'Watch Store', successMsg: successMsg, noMessages: !successMsg, orders: orders} );
+  });
 });
 
 /* GET users registration listing. */
