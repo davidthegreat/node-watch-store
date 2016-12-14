@@ -57,6 +57,13 @@ router.get('/mens-watches-cart/:id', function(req, res, next){
   })
 });
 
+router.get('/cart', function(req, res, next){
+  if(!req.session.cart){
+		return res.render('shopping-cart', {products: null});
+	}
+	var cart = new Cart(req.session.cart);
+	res.render('shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice})
+})
 /* GET users Acount listing. */
 router.get('/MyAcount', isLoggedIn, function(req, res, next){
   res.render('user/profile');
