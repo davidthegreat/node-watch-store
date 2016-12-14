@@ -1486,7 +1486,7 @@ a.mask {
 /*--account-end--*/
 /*--start-checkout--*/
 .ckeckout{
-	padding:6em 0px;
+	padding:2em 0px;
 }
 .close1,.close2,.close3{
 	background: url('../images/close.png') no-repeat 0px 0px;
@@ -3083,4 +3083,29 @@ ul.tag-men {
 }
 .cart-img{
 	max-height: 100px;
+}
+
+.caret.caret-reversed {
+    border-top-width: 0;
+    border-bottom: 4px solid #000000;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: black;
 }
