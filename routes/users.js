@@ -20,10 +20,17 @@ res.render('user/signup',{csrfToken: req.csrfToken(), messages: messages, hasErr
 
 /* post users registration  listing. */
 router.post('/register', notLoggedIn, passport.authenticate('local.signup',{
-  successRedirect: '/',
   failureRedirect: '/users/register',
   failureFlash: true
-}));
+}), function(req, res, next){
+  if (req.session.oldUrl){
+		var oldUrl = req.session.oldUrl
+		req.session.oldUrl = null;
+		res.redirect(oldUrl);
+	} else {
+		res.redirect('/user/profile')
+	}
+});
 
 /* GET users signin  listing. */
 router.get('/signin', notLoggedIn, function(req, res, next) {
@@ -33,10 +40,17 @@ router.get('/signin', notLoggedIn, function(req, res, next) {
 
 /* post users signin  listing. */
 router.post('/signin',notLoggedIn,  passport.authenticate('local.signin',{
-  successRedirect: '/',
   failureRedirect: '/users/signin',
   failureFlash: true
-}));
+}), function(req, res, next){
+  if (req.session.oldUrl){
+		var oldUrl = req.session.oldUrl
+		req.session.oldUrl = null;
+		res.redirect(oldUrl);
+	} else {
+		res.redirect('/user/profile')
+	}
+});
 
 /* GET users logout  listing. */
 router.get('/logout', isLoggedIn, function (req, res, next) {
