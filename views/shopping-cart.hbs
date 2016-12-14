@@ -1,0 +1,55 @@
+{{#if products}}
+    <!--start-ckeckout-->
+    <div class="ckeckout">
+      <div class="container">
+        <div class="ckeck-top heading">
+          <h2>CHECKOUT</h2>
+        </div>
+        <div class="ckeckout-top">
+        <div class="cart-items">
+         <h3>My Shopping Bag (3)</h3>
+
+
+
+        <div class="in-check" >
+          <ul class="unit">
+            <li><span>Item</span></li>
+            <li><span>Product Name</span></li>
+            <li><span>Unit Price</span></li>
+            <li><span>QTY</span></li>
+            <li> </li>
+            <div class="clearfix"> </div>
+          </ul>
+          {{#each products}}
+          <ul class="cart-header">
+            <div class="close1"> </div>
+              <li class="ring-in"><a href="" ><img src="{{this.item.imagePath}}" class="img-responsive cart-img" alt=""></a>
+              </li>
+              <li><span class="name">{{this.item.title}}</span></li>
+              <li><span class="cost">$ {{this.item.price}}</span></li>
+              <li><span>{{this.qty}}</span>
+              <p>Delivered in 2-3 business days</p></li>
+            <div class="clearfix"> </div>
+          </ul>
+          {{/each}}
+        </div>
+        </div>
+       </div>
+       <h3><span>Total: $</span >{{totalPrice}}</h3>
+       <a href="/checkout" class="add-cart item_add">CHECKOUT</a>
+
+      </div>
+    </div>
+    <!--end-ckeckout-->
+
+
+
+{{else}}
+
+<div class="container">
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+    <h2>No Items in Cart</h2>
+  </div>
+</div>
+
+{{/if}}
