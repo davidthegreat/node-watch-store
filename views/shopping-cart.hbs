@@ -3,11 +3,11 @@
     <div class="ckeckout">
       <div class="container">
         <div class="ckeck-top heading">
-          <h2>CHECKOUT</h2>
+          <h2>CART</h2>
         </div>
         <div class="ckeckout-top">
         <div class="cart-items">
-         <h3>My Shopping Bag (3)</h3>
+         <h3>My Shopping Bag ({{session.cart.totalQty}})</h3>
 
 
 
@@ -22,13 +22,13 @@
           </ul>
           {{#each products}}
           <ul class="cart-header">
-            <div class="close1"> </div>
+            <a href="/remove/{{this.item._id}}"><div class="close1"> </div></a>
               <li class="ring-in"><a href="" ><img src="{{this.item.imagePath}}" class="img-responsive cart-img" alt=""></a>
               </li>
               <li><span class="name">{{this.item.title}}</span></li>
               <li><span class="cost">$ {{this.item.price}}</span></li>
-              <li><span>{{this.qty}}</span>
-              <p>Delivered in 2-3 business days</p></li>
+              <!-- <li><span>{{this.qty}}</span></li> -->
+              <li> <span><h4><a href="/reduce/{{this.item._id}}" class="minus">&#8211;</a>  <a class="minus">{{this.qty}}</a> <a href="/add/{{this.item._id}}"class="plus">&#43;</a></h4></span></li>
             <div class="clearfix"> </div>
           </ul>
           {{/each}}
