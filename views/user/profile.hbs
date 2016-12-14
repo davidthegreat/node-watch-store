@@ -5,3 +5,28 @@
         </div>
     </div>
 </div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-2">
+		<h1 style="padding-bottom:40px;">My Orders</h1>
+		{{# each orders}}
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<ul class="list-group">
+					{{# each this.items}}
+
+	  					<li class="list-group-item">
+							<img src="{{this.item.imagePath}}" alt="..." class="img-responsive" style="max-height: 170px;" >
+  					{{this.item.name}}
+						<span class="pull-right">${{this.price}}</span>
+	  					</li>
+	  				{{/each}}
+				</ul>
+			</div>
+<h4 class="panel-padding">Order placed:</h4>
+
+
+		<div class="panel-footer"><strong>Total Price: ${{this.cart.totalPrice}}</strong></div>
+		</div>
+		{{/each}}
+	</div>
+</div>
