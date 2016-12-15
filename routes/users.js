@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var csrf = require('csurf');
-var passport = require('passport')
+var passport = require('passport');
+
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
@@ -13,7 +17,7 @@ var Cart = require('../app/models/cart');
 /* GET users Acount listing. */
 router.get('/MyAcount', isLoggedIn, function(req, res, next){
   var successMsg = req.flash('success')[0];
-  Order.find({user: req.user}, function(err, orders){
+  Order.find({user: req.user},null,{ sort :{  created_at : -1}}, function(err, orders){
     if (err) {
         return res.write('Error!');
     }
@@ -42,7 +46,7 @@ router.post('/register', notLoggedIn, passport.authenticate('local.signup',{
 		req.session.oldUrl = null;
 		res.redirect(oldUrl);
 	} else {
-		res.redirect('/user/profile')
+		res.redirect('/users/MyAcount')
 	}
 });
 
@@ -62,7 +66,7 @@ router.post('/signin',notLoggedIn,  passport.authenticate('local.signin',{
 		req.session.oldUrl = null;
 		res.redirect(oldUrl);
 	} else {
-		res.redirect('/user/profile')
+		res.redirect('/users/MyAcount')
 	}
 });
 

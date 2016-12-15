@@ -3109,3 +3109,26 @@ a:active {
 a {
     color: black;
 }
+.panel-bold{
+
+  font-weight: 900;
+}
+
+.panel-padding{
+  padding-left:10px;
+}
+
+.paddingfooter{
+  padding-bottom: 180px;
+}
+
+.absolutess {
+    position: absolute;
+    right: 12px;
+    width: 200px;
+    height: 120px;
+}
+
+.list-group-item{
+	padding-bottom: 20px;
+}
