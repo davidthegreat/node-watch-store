@@ -109,7 +109,23 @@ router.get('/kids-watches-carts/:id', function(req, res, next){
     cart.add(product, product.id);
     req.session.cart = cart;
     console.log(req.session.cart)
-    res.redirect('/Mens-Watches/')
+    res.redirect('/Kids-Watches/')
+  })
+});
+
+/* GET mens watches  add to cart from the show page. */
+router.get('/kids-watches-cart/:id', function(req, res, next){
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  Kid.findById(productId, function(err,product){
+    if (err) {
+      return res.redirect('/');
+    };
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart)
+    res.redirect('/kids-Watches/'+ product.id)
   })
 });
 
