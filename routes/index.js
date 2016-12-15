@@ -5,12 +5,13 @@ var Men = require('../app/models/men');
 var Cart = require('../app/models/cart');
 var Order = require('../app/models/order');
 var Kid = require('../app/models/kid');
+var Women = require('../app/models/women');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+/////////////////////////////////////////////////////////////////////////////////
 /* GET mens watches page. */
 router.get('/Mens-Watches', function(req, res, next) {
   Men.find(function(err, docs) {
@@ -69,7 +70,7 @@ router.get('/mens-watches-carts/:id', function(req, res, next){
     res.redirect('/Mens-Watches/')
   })
 });
-
+/////////////////////////////////////////////////////////////////////////////////
 /* GET kids watches page. */
 router.get('/Kids-Watches', function(req, res, next) {
   Kid.find(function(err, docs) {
@@ -126,6 +127,65 @@ router.get('/kids-watches-cart/:id', function(req, res, next){
     req.session.cart = cart;
     console.log(req.session.cart)
     res.redirect('/kids-Watches/'+ product.id)
+  })
+});
+/////////////////////////////////////////////////////////////////////////////////
+/* GET women watches page. */
+router.get('/Womens-Watches', function(req, res, next) {
+  Women.find(function(err, docs) {
+      var productChunks = [];
+      var chunkSize = 3;
+      for (var i = 0; i < docs.length; i += chunkSize) {
+          productChunks.push(docs.slice(i, i + chunkSize));
+      }
+      res.render('women/index', { title: 'Cool Watches', products: productChunks });
+  })
+});
+
+/* GET mens watches show page. */
+router.get('/Womens-Watches/:id', function(req, res, next){
+  var product_id = req.param('id');
+  Women.findOne({'_id': product_id}, function(err, products){
+    if (!err){
+      var product = [];
+      var c = products;
+      product.push(c);
+      res.render('women/show', {product: product});
+    }else{
+      return console.log(err);
+    }
+  });
+});
+
+/* GET mens watches  add to cart from the show page. */
+router.get('/womens-watches-cart/:id', function(req, res, next){
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  Women.findById(productId, function(err,product){
+    if (err) {
+      return res.redirect('/');
+    };
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart)
+    res.redirect('/Womens-Watches/'+ product.id)
+  })
+});
+
+/* GET mens watches  add to cart from the index page. */
+router.get('/womens-watches-carts/:id', function(req, res, next){
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  Women.findById(productId, function(err,product){
+    if (err) {
+      return res.redirect('/');
+    };
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart)
+    res.redirect('/Womens-Watches/')
   })
 });
 
