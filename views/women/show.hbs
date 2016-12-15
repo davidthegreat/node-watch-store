@@ -1,0 +1,135 @@
+{{#each product}}
+<!--start-single-->
+	<div class="single contact">
+		<div class="container">
+			<div class="single-main">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-9 single-main-left">
+				<div class="sngl-top">
+					<div class="col-md-5 col-sm-12 single-top-left">
+						<div class="flexslider">
+							  <ul class="slides">
+								<li data-thumb="{{imagePath}}">
+									<div class="thumb-image"> <img src="{{imagePath}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
+								<li data-thumb="{{secondimagePath}}">
+									 <div class="thumb-image"> <img src="{{secondimagePath}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
+								<li data-thumb="{{thirdimagePath}}">
+								   <div class="thumb-image"> <img src="{{thirdimagePath}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
+							  </ul>
+						</div>
+						<!-- FlexSlider -->
+						<script src="javascripts/imagezoom.js"></script>
+						<script defer src="javascripts/jquery.flexslider.js"></script>
+						<link rel="stylesheet" href="/stylesheets/flexslider.css" type="text/css" media="screen" />
+
+						<script>
+						// Can also be used with $(document).ready()
+						$(window).load(function() {
+						  $('.flexslider').flexslider({
+							animation: "slide",
+							controlNav: "thumbnails"
+						  });
+						});
+						</script>
+					</div>
+					<div class="col-md-7 single-top-right">
+						<div class="single-para simpleCart_shelfItem">
+						<h2>{{this.title}}</h2>
+							<div class="star-on">
+								<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i></i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"></a></li>
+									</ul>
+
+							<div class="clearfix"> </div>
+							</div>
+
+							<h5 class="item_price">$ {{this.price}}</h5>
+							<p>{{this.description}}</p>
+
+
+								<a href="/womens-watches-cart/{{this._id}}" class="add-cart item_add">ADD TO CART</a>
+
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+			</div>
+			<div class="col-md-1">
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+{{/each}}
+
+
+<div class="container">
+    <div class="latestproducts">
+      <div class="product-one">
+        <div class="col-md-3 product-lef">
+          <div class="product-main simpleCart_shelfItem">
+            <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-5.png" alt="" /></a>
+            <div class="product-bottom">
+              <h3>Smart Watches</h3>
+              <p>Explore Now</p>
+              <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+            </div>
+            <div class="srch">
+              <span>-50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-lef">
+          <div class="product-main simpleCart_shelfItem">
+            <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-6.png" alt="" /></a>
+            <div class="product-bottom">
+              <h3>Smart Watches</h3>
+              <p>Explore Now</p>
+              <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+            </div>
+            <div class="srch">
+              <span>-50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-lef">
+          <div class="product-main simpleCart_shelfItem">
+            <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-7.png" alt="" /></a>
+            <div class="product-bottom">
+              <h3>Smart Watches</h3>
+              <p>Explore Now</p>
+              <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+            </div>
+            <div class="srch">
+              <span>-50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-lef">
+          <div class="product-main simpleCart_shelfItem">
+            <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-8.png" alt="" /></a>
+            <div class="product-bottom">
+              <h3>Smart Watches</h3>
+              <p>Explore Now</p>
+              <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+            </div>
+            <div class="srch">
+              <span>-50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+    </div>
+
+  </div>
+	<!--end-single-->
