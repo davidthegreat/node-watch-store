@@ -37,6 +37,7 @@ router.get('/Mens-Watches/:id', function(req, res, next){
   });
 });
 
+/* GET mens watches  add to cart from the show page. */
 router.get('/mens-watches-cart/:id', function(req, res, next){
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -52,6 +53,23 @@ router.get('/mens-watches-cart/:id', function(req, res, next){
   })
 });
 
+/* GET mens watches  add to cart from the index page. */
+router.get('/mens-watches-carts/:id', function(req, res, next){
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  Men.findById(productId, function(err,product){
+    if (err) {
+      return res.redirect('/');
+    };
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart)
+    res.redirect('/Mens-Watches/')
+  })
+});
+
+/* GET cart page. */
 router.get('/cart', function(req, res, next){
   if(!req.session.cart){
 		return res.render('shopping-cart', {products: null});
@@ -60,6 +78,7 @@ router.get('/cart', function(req, res, next){
 	res.render('shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice})
 });
 
+/* GET Checkout page. */
 router.get('/checkout', isLoggedIn, function(req, res, next){
   if(!req.session.cart){
 		return res.redirect('/cart')
@@ -69,6 +88,7 @@ router.get('/checkout', isLoggedIn, function(req, res, next){
 	res.render('checkout', {total: cart.totalPrice, errMsg: errMsg, noError: !errMsg});
 });
 
+/* POST Checkout page. */
 router.post('/checkout', isLoggedIn, function(req, res, next){
   if(!req.session.cart){
 		return res.redirect('/cart')
@@ -110,6 +130,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next){
   });
 });
 
+/* GET reduce product page. */
 router.get('/reduce/:id', function(req, res, next){
 	var productId = req.params.id;
 	var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -119,6 +140,7 @@ router.get('/reduce/:id', function(req, res, next){
 	res.redirect('/cart');
 });
 
+/* GET add product page. */
 router.get('/add/:id', function(req, res, next){
 	var productId = req.params.id;
 	var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -128,6 +150,7 @@ router.get('/add/:id', function(req, res, next){
 	res.redirect('/cart');
 });
 
+/* GET remove product page. */
 router.get('/remove/:id', function(req, res, next){
 	var productId = req.params.id;
 	var cart = new Cart(req.session.cart ? req.session.cart : {});
