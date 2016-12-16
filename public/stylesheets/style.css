@@ -1341,7 +1341,7 @@ a.mask {
 	margin-top:4%;
 }
 .contact-right input[type="text"] {
-	width: 32.51%;
+	width: 100%;
 	margin: 0px;
 	color: #000;
 	background: none;
@@ -1419,7 +1419,7 @@ a.mask {
 /*--map-end--*/
 /*--account-starts--*/
 .account{
-	padding:6em 0px;
+	padding:2em 0px;
 }
 .account-left h3 {
     font-size: 1.7em;
