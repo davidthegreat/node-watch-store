@@ -304,8 +304,50 @@ router.get('/remove/:id', function(req, res, next){
 	res.redirect('/cart');
 });
 
+/* GET contact page. */
+router.get('/contact', function(req, res, next){
+  res.render('contact');
+});
 
+/* GET contact page. */
+router.get('/contact', function(req, res, next){
+  res.render('contact');
+});
 
+/* POST contact page. */
+router.post('/contact', function(req, res, next){
+
+console.log('dsflakjsdafjlk;sdajflksdajflkdsajflk')
+  var dmail = req.body.email
+console.log("dsajfkkdjshafkjdshafklsdjfkljdsk")
+  //var dmail =  'davidsramirez11@gmail.com'
+    console.log(dmail);
+    var helper = require('sendgrid').mail;
+    var from_email = new helper.Email('example@example.com');
+    var to_email = new helper.Email('example@example.com');
+    var subject = 'Salud Message';
+    var content = new helper.Content('text/plain', 'Thankyou for shopping at Salud ');
+    var mail = new helper.Mail(from_email, subject, to_email, content);
+
+    var sg = require('sendgrid')('APIKEY');
+    var request = sg.emptyRequest({
+      method: 'POST',
+      path: '/v3/mail/send',
+      body: mail.toJSON(),
+    });
+
+    sg.API(request, function(error, response) {
+      console.log(response.statusCode);
+      console.log(response.body);
+      console.log(response.headers);
+    });
+  res.redirect('/thankyou');
+});
+
+/* GET contact page. */
+router.get('/thankyou', function(req, res, next){
+  res.render('thankyou');
+});
 
 module.exports = router;
 
