@@ -3132,3 +3132,7 @@ a {
 .list-group-item{
 	padding-bottom: 20px;
 }
+
+.thankcenter{
+	text-align: center;
+}
