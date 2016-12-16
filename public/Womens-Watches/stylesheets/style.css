@@ -1876,7 +1876,10 @@ h3.ghj {
 	background:#000;
 }
 .register{
-	padding:6em 0px;
+	padding:1em 0px;
+}
+.registers{
+	padding-top: 8px;
 }
 /*--end-register--*/
 /*--media-quaries-starts-here--*/

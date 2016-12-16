@@ -9,7 +9,31 @@ var Women = require('../app/models/women');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  Men.find(function(err, docs) {
+      var productChunks = [];
+      var chunkSize = 3;
+      for (var i = 4; i < docs.length; i += chunkSize) {
+          productChunks.push(docs.slice(i, i + chunkSize));
+      }
+      res.render('index', { title: 'Cool Watches', products: productChunks });
+  });
+});
+
+
+/* GET mens watches  add to cart from the index page. */
+router.get('/Mens-watches-carts/:id', function(req, res, next){
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  Men.findById(productId, function(err,product){
+    if (err) {
+      return res.redirect('/');
+    };
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart)
+    res.redirect('/')
+  })
 });
 /////////////////////////////////////////////////////////////////////////////////
 /* GET mens watches page. */
@@ -279,6 +303,7 @@ router.get('/remove/:id', function(req, res, next){
 	req.session.cart = cart;
 	res.redirect('/cart');
 });
+
 
 
 

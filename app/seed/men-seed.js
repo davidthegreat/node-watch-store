@@ -32,6 +32,14 @@ var mens =  [
     sale: 'none',
   }),
   new Men({
+    imagePath: 'http://localhost:3000/images/MichaelKorsMensMK8281.jpg',
+    secondimagePath: 'http://localhost:3000/images/MichaelKorsMensMK82812.jpg',
+    thirdimagePath: 'http://localhost:3000/images/MichaelKorsMensMK82813.jpg',
+    title: "Michael Kors Men's MK8281",
+    description: "This fine Michael Kors watch has chronograph easy-to-read subdials to match function with class. This goldtone watch features a fluted bezel and stainless steel construction. This watch is suitable for wear with casual clothing, professional outfits, or formal wear, and will add some polished elegance to your ensemble. Complete with a relatively lightweight feel, this classic watch makes an excellent gift for birthdays, anniversaries, or graduations.",
+    price: 196,
+  }),
+  new Men({
     imagePath: 'http://localhost:3000/images/ESQMovadoMensRubber.jpg',
     secondimagePath: 'http://localhost:3000/images/ESQMovadoMensRubber2.jpg',
     thirdimagePath: 'http://localhost:3000/images/ESQMovadoMensRubber3.jpg',
@@ -39,14 +47,6 @@ var mens =  [
     description: "Add a sporty accent to your wardrobe with this handsome men's watch from ESQ by Movado. A white rubber strap and a stainless steel case with a white dial make this watch a stylish complement to your active lifestyle. The watch runs on a reliable Swiss quartz movement to keep you consistently on time and in style.",
     price: 64,
     sale: 'show',
-  }),
-  new Men({
-    imagePath: 'http://localhost:3000/images/MichaelKorsMensMK8281.jpg',
-    secondimagePath: 'http://localhost:3000/images/MichaelKorsMensMK82812.jpg',
-    thirdimagePath: 'http://localhost:3000/images/MichaelKorsMensMK82813.jpg',
-    title: "Michael Kors Men's MK8281",
-    description: "This fine Michael Kors watch has chronograph easy-to-read subdials to match function with class. This goldtone watch features a fluted bezel and stainless steel construction. This watch is suitable for wear with casual clothing, professional outfits, or formal wear, and will add some polished elegance to your ensemble. Complete with a relatively lightweight feel, this classic watch makes an excellent gift for birthdays, anniversaries, or graduations.",
-    price: 196,
   }),
   new Men({
     imagePath: 'http://localhost:3000/images/FossilMensCH2564.png',
