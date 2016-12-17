@@ -20,8 +20,41 @@ router.get('/', isAdmin, function(req, res, next) {
         order.items = cart.generateArray();
     });
     res.render('admin/index', { orders: orders,layout: false });
+  });
 });
+
+router.get('/Mens-Watches', isAdmin, function(req, res, next){
+  Men.find(function(err, docs) {
+      var productChunks = [];
+      var chunkSize = 3;
+      for (var i = 4; i < docs.length; i += chunkSize) {
+          productChunks.push(docs.slice(i, i + chunkSize));
+      }
+      res.render('admin/men', { title: 'Cool Watches', products: productChunks,layout: false });
+  });
 });
+
+router.get('/Womens-Watches', isAdmin, function(req, res, next){
+  Women.find(function(err, docs) {
+      var productChunks = [];
+      var chunkSize = 3;
+      for (var i = 4; i < docs.length; i += chunkSize) {
+          productChunks.push(docs.slice(i, i + chunkSize));
+      }
+      res.render('admin/women', { title: 'Cool Watches', products: productChunks,layout: false });
+  });
+});
+
+router.get('/Kids-Watches', isAdmin, function(req, res, next){
+  Kid.find(function(err, docs) {
+      var productChunks = [];
+      var chunkSize = 3;
+      for (var i = 4; i < docs.length; i += chunkSize) {
+          productChunks.push(docs.slice(i, i + chunkSize));
+      }
+      res.render('admin/kid', { title: 'Cool Watches', products: productChunks,layout: false });
+  });
+})
 
 module.exports = router;
 
