@@ -25,6 +25,8 @@
               </button>
               <a class="navbar-brand" href="">ADMIN</a>
           </div>
+
+
       </nav>
       <!--/. NAV TOP  -->
       <nav class="navbar-default navbar-side" role="navigation">
@@ -32,10 +34,10 @@
               <ul class="nav" id="main-menu">
 
                   <li>
-                      <a class="active-menu" href="/admin"> Orders</a>
+                      <a  href="/admin"> Orders</a>
                   </li>
                   <li>
-                      <a href="/admin/Mens-Watches">MEN</a>
+                      <a class="active-menu" href="/admin/Mens-Watches">MEN</a>
                   </li>
                        <li>
                       <a href="/admin/Womens-Watches"> WOMEN</a>
@@ -44,14 +46,11 @@
                       <a href="/admin/Kids-Watches"> KID</a>
                   </li>
 
-
               </ul>
 
           </div>
 
       </nav>
-
-
       <!-- /. NAV SIDE  -->
       <div id="page-wrapper">
           <div id="page-inner">
@@ -74,57 +73,41 @@
            			<thead>
            				<tr>
            					<th>Name</th>
-           					<th>Address</th>
-           					<!-- <th>City</th> -->
-           					<!-- <th>State</th> -->
-           					<!-- <th>zip</th> -->
-           					<!-- <th>country</th> -->
-           					<!-- <th>Email</th> -->
-           					<!-- <th>paymentId</th> -->
-           					<th>product name</th>
-           					<th>product qty</th>
-           					<!-- <th>product price</th> -->
-           					<th>order total</th>
            				</tr>
            			</thead>
-           			{{# each orders}}
+                {{# each products}}
            			<tbody>
-           				<tr>
-           						<td class="smalls">{{this.name}}</td>
-           						<td class="smalls">{{this.address}}</td>
-           						<!-- <td>{{this.city}}</td> -->
-           						<!-- <td>{{this.state}}</td> -->
-           						<!-- <td>{{this.zip}}</td> -->
-           						<!-- <td>{{this.country}}</td> -->
-           						<!-- <td class="smalls">{{this.email}}</td> -->
-           						<!-- <td class="smalls">{{this.paymentId}}</td> -->
+                  <td class="smalls">
+                    <ul class="list-group" style="list-style-type: none;">
+                      {{# each this}}
+                        <li>{{this.title}}*</li>
 
-           						<td class="smalls">
-           							<ul class="list-group" style="list-style-type: none;">
-           								{{# each this.items}}
-           									<li>{{this.item.title}}*</li>
-           									{{/each}}
-           							</ul>
-           						</td>
-           						<td>
-           							<ul class="list-group" style="list-style-type: none;">
-           								{{# each this.items}}
-           									<li>{{this.qty}}qty</li>
-           									{{/each}}
-           							</ul>
-           						</td>
-           						<!-- <td>
-           							<ul class="list-group" style="list-style-type: none;">
-           								{{# each this.items}}
-           									<li>${{this.price}}</li>
-           									{{/each}}
-           							</ul>
-           						</td> -->
-           							<td>${{this.cart.totalPrice}}</td>
-           				</tr>
+                        {{/each}}
+                    </ul>
+                  </td>
+                  <td class="">
+                    <ul class="list-group" style="list-style-type: none;">
+                      {{# each this}}
+                        <li>  <a href="#">Edit</a></li>
+
+                        {{/each}}
+                    </ul>
+                  </td>
+
+                  <td class="">
+                    <ul class="list-group" style="list-style-type: none;">
+                      {{# each this}}
+                        <li>  <a href="#">Delete</a></li>
+
+                        {{/each}}
+                    </ul>
+                  </td>
+
            				</tbody>
-           			{{/each}}
+                  {{/each}}
+
            		</table>
+              <a href="#">New Watch</a>
            	</div>
            </div>
 
