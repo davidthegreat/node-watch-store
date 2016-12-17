@@ -12,7 +12,7 @@ var Women = require('../app/models/women');
 router.get('/', isAdmin, function(req, res, next) {
   Order.find( function(err, orders) {
     if (err) {
-        return res.write('Error!');
+      res.render('404', {layout: false})
     }
     var cart;
     orders.forEach(function(order) {
@@ -25,12 +25,12 @@ router.get('/', isAdmin, function(req, res, next) {
 
 router.get('/Mens-Watches', isAdmin, function(req, res, next){
   Men.find(function(err, docs) {
-      var productChunks = [];
-      var chunkSize = 3;
-      for (var i = 4; i < docs.length; i += chunkSize) {
-          productChunks.push(docs.slice(i, i + chunkSize));
-      }
-      res.render('admin/men', { title: 'Cool Watches', products: productChunks,layout: false });
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 4; i < docs.length; i += chunkSize) {
+        productChunks.push(docs.slice(i, i + chunkSize));
+    }
+    res.render('admin/men', { title: 'Cool Watches', products: productChunks,layout: false });
   });
 });
 
@@ -54,7 +54,12 @@ router.get('/Kids-Watches', isAdmin, function(req, res, next){
       }
       res.render('admin/kid', { title: 'Cool Watches', products: productChunks,layout: false });
   });
-})
+});
+
+/* GET 404 page. */
+router.get('*', function(req, res, next){
+  res.render('404', {layout: false})
+});
 
 module.exports = router;
 
@@ -63,6 +68,6 @@ function isAdmin(req, res, next) {
      next();
    }
    else{
-     res.send(401, 'Unauthorized');
+     res.render('404', {layout: false})
    }
  }
