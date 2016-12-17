@@ -74,7 +74,12 @@ router.post('/signin',notLoggedIn,  passport.authenticate('local.signin',{
 router.get('/logout', isLoggedIn, function (req, res, next) {
   req.logout();
   res.redirect('/')
-})
+});
+
+/* GET contact page. */
+router.get('*', function(req, res, next){
+  res.render('404', {layout: false})
+});
 
 
 module.exports = router;
