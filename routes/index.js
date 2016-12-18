@@ -68,33 +68,8 @@ router.get('/mens-watches-carts/:id', function(req, res, next){
     res.redirect('/Mens-Watches/')
   })
 });
-/////////////////////////////////////////////////////////////////////////////////
-/* GET kids watches page. */
-router.get('/Kids-Watches', function(req, res, next) {
-  Kid.find(function(err, docs) {
-      var productChunks = [];
-      var chunkSize = 3;
-      for (var i = 0; i < docs.length; i += chunkSize) {
-          productChunks.push(docs.slice(i, i + chunkSize));
-      }
-      res.render('kids/index', { title: 'Cool Watches', products: productChunks });
-  })
-});
 
-/* GET kids watches show page. */
-router.get('/Kids-Watches/:id', function(req, res, next){
-  var product_id = req.param('id');
-  Kid.findOne({'_id': product_id}, function(err, products){
-    if (!err){
-      var product = [];
-      var c = products;
-      product.push(c);
-      res.render('kids/show', {product: product});
-    }else{
-      return console.log(err);
-    }
-  });
-});
+
 
 /* GET kids watches  add to cart from the index page. */
 router.get('/kids-watches-carts/:id', function(req, res, next){

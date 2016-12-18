@@ -17,6 +17,7 @@ var users = require('./routes/users');
 var admin = require('./routes/admin');
 var men = require('./routes/men');
 var women = require('./routes/women');
+var kid = require('./routes/kid');
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/users', users);
 app.use('/admin', admin);
 app.use('/Mens-Watches', men)
 app.use('/Womens-Watches',women)
+app.upe('/Kids-Watches',kid)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
