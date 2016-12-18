@@ -8,7 +8,9 @@
     <!-- Bootstrap Styles-->
     <link href="stylesheets/bootstrap.css" rel="stylesheet" />
 
+    <link href="stylesheets/style.css" rel="stylesheet" />
     <link href="stylesheets/custom-styles.css" rel="stylesheet" />
+
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -25,8 +27,6 @@
               </button>
               <a class="navbar-brand" href="">ADMIN</a>
           </div>
-
-
       </nav>
       <!--/. NAV TOP  -->
       <nav class="navbar-default navbar-side" role="navigation">
@@ -34,18 +34,17 @@
               <ul class="nav" id="main-menu">
 
                   <li>
-                      <a  href="/admin"> Orders</a>
+                      <a class="active-menu" href="/admin"> Orders</a>
                   </li>
                   <li>
                       <a href="/admin/Mens-Watches">MEN</a>
                   </li>
-                  <li>
-                      <a class="active-menu" href="/admin/Womens-Watches"> WOMEN</a>
+                       <li>
+                      <a href="/admin/Womens-Watches"> WOMEN</a>
                   </li>
                   <li>
                       <a href="/admin/Kids-Watches"> KID</a>
                   </li>
-
 
 
               </ul>
@@ -53,65 +52,51 @@
           </div>
 
       </nav>
+
+
       <!-- /. NAV SIDE  -->
       <div id="page-wrapper">
           <div id="page-inner">
 
-            <div class="row">
-               <div class="col-md-12">
-                   <h1 class="page-header">
-                       All orders
-                   </h1>
-               </div>
-           </div>
 
 
 
+            <div class="contact">
+              <div class="container">
+                <div class="contact-top heading">
+                  <h2>New Women Watch</h2>
+                </div>
+                  <div class="contact-text">
+
+                    <div class="col-md-10 contact-right">
+
+                      <form action="/new-womenwatch" method="post">
 
 
-           <div class="row">
-           	<div class="col-md-12 ">
-           		<table class="table">
-           			<thead>
-           				<tr>
-           					<th>Name</th>
-           				</tr>
-           			</thead>
-                {{# each products}}
-           			<tbody>
-                  <td class="smalls">
-                    <ul class="list-group" style="list-style-type: none;">
-                      {{# each this}}
-                        <li>{{this.title}}*</li>
 
-                        {{/each}}
-                    </ul>
-                  </td>
-                  <td class="">
-                    <ul class="list-group" style="list-style-type: none;">
-                      {{# each this}}
-                        <li>  <a href="#">Edit</a></li>
+                        <input type="text" placeholder="Image" id="image" name="image" required=""><br><br>
+                        <input type="text" placeholder="Image Two" id="image2" name="image2" required=""><br><br>
+                        <input type="text" placeholder="Image Three" id="image3" name="image3" required=""><br><br>
+                        <input type="text" placeholder="Watch Name" id="name" name="name" required=""><br><br>
+                        <input type="text"  placeholder="Watch Description" id="description" name="description" required=""><br><br>
+                        <input type="text"  placeholder="Watch Price" id="price" name="price" required=""><br><br>
+                        <label for="">Is Watch on sale if so type show else type none</label>
+                        <input type="text"  placeholder="Watch Sale" id="sale" name="sale" required=""><br><br>
 
-                        {{/each}}
-                    </ul>
-                  </td>
+                        <div class="submit-btn">
+                          <input type="submit" value="SUBMIT">
+                        </div>
 
-                  <td class="">
-                    <ul class="list-group" style="list-style-type: none;">
-                      {{# each this}}
-                        <li>  <a href="Womens-Watches-delete/{{this._id}}">Delete</a></li>
+                      </form>
 
-                        {{/each}}
-                    </ul>
-                  </td>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+              </div>
+            </div>
 
-           				</tbody>
-                  {{/each}}
 
-           		</table>
-              <a href="new-womenwatch">New Watch</a>
-           	</div>
-           </div>
+
 
 
 
