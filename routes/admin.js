@@ -34,6 +34,7 @@ router.get('/Mens-Watches', isAdmin, function(req, res, next){
   });
 });
 
+
 router.get('/Womens-Watches', isAdmin, function(req, res, next){
   Women.find(function(err, docs) {
       var productChunks = [];
@@ -91,6 +92,12 @@ router.get('/Mens-Watches-delete/:id', isAdmin, function(req, res, next){
     }
   });
 });
+
+router.get('/new-menwatch', isAdmin, function(req, res, next){
+  res.render('mens/new',  {layout: false})
+});
+
+
 
 /* GET 404 page. */
 router.get('*', function(req, res, next){

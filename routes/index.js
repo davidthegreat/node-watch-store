@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 var Men = require('../app/models/men');
 var Cart = require('../app/models/cart');
@@ -273,6 +274,32 @@ router.get('/thankyou', function(req, res, next){
   res.render('thankyou');
 });
 
+router.post('/new-menwatch', isAdmin, function(req, res, next){
+console.log(req.body.name);
+  console.log(req.body.name);
+
+  console.log("jwoiefjdskljds")
+  var product = new Men ({
+		imagePath: req.body.image,
+    secondimagePath: req.body.image2,
+    thirdimagePath: req.body.image3,
+		title: req.body.name,
+		description: req.body.description,
+		price: req.body.price,
+    sale: req.body.sale,
+
+	});
+
+
+	product.save(function(err, result){
+		if(err){
+			req.flash('error', err.message);
+			return res.redirect('mens/new')
+		}
+	res.redirect('/admin/Mens-Watches')
+	});
+});
+
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
@@ -282,3 +309,12 @@ function isLoggedIn(req, res, next) {
     req.session.oldUrl = req.url
     res.redirect('/users/signin');
 }
+
+function isAdmin(req, res, next) {
+   if (req.user && req.user.isAdmin === true){
+     next();
+   }
+   else{
+     res.render('404', {layout: false})
+   }
+ }
