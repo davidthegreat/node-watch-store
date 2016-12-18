@@ -316,7 +316,26 @@ router.post('/new-womenwatch', isAdmin, function(req, res, next){
 	});
 });
 
+router.post('/new-kidwatch', isAdmin, function(req, res, next){
 
+  var product = new Kid ({
+		imagePath: req.body.image,
+    secondimagePath: req.body.image2,
+    thirdimagePath: req.body.image3,
+		title: req.body.name,
+		description: req.body.description,
+		price: req.body.price,
+    sale: req.body.sale,
+
+	});
+	product.save(function(err, result){
+		if(err){
+			req.flash('error', err.message);
+			return res.redirect('/admin/new-kidwatch')
+		}
+	res.redirect('/admin/Kids-Watches')
+	});
+});
 
 
 module.exports = router;
