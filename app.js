@@ -58,7 +58,7 @@ app.use('/users', users);
 app.use('/admin', admin);
 app.use('/Mens-Watches', men)
 app.use('/Womens-Watches',women)
-app.upe('/Kids-Watches',kid)
+app.use('/Kids-Watches',kid)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

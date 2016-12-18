@@ -56,6 +56,42 @@ router.get('/Kids-Watches', isAdmin, function(req, res, next){
   });
 });
 
+/* GET kids watches show page. */
+router.get('/Kids-Watches-delete/:id', isAdmin, function(req, res, next){
+  var product_id = req.param('id');
+  Kid.remove({'_id': product_id}, function(err, products){
+    if (!err){
+      res.redirect('/admin/Kids-Watches');
+    }else{
+      return console.log(err);
+    }
+  });
+});
+
+/* GET kids watches show page. */
+router.get('/Womens-Watches-delete/:id', isAdmin, function(req, res, next){
+  var product_id = req.param('id');
+  Women.remove({'_id': product_id}, function(err, products){
+    if (!err){
+      res.redirect('/admin/Womens-Watches');
+    }else{
+      return console.log(err);
+    }
+  });
+});
+
+/* GET kids watches show page. */
+router.get('/Mens-Watches-delete/:id', isAdmin, function(req, res, next){
+  var product_id = req.param('id');
+  Men.remove({'_id': product_id}, function(err, products){
+    if (!err){
+      res.redirect('/admin/Mens-Watches');
+    }else{
+      return console.log(err);
+    }
+  });
+});
+
 /* GET 404 page. */
 router.get('*', function(req, res, next){
   res.render('404', {layout: false})
