@@ -97,6 +97,10 @@ router.get('/new-menwatch', isAdmin, function(req, res, next){
   res.render('mens/new',  {layout: false})
 });
 
+router.get('/new-womenwatch', isAdmin, function(req, res, next){
+  res.render('women/new',  {layout: false})
+});
+
 
 
 /* GET 404 page. */

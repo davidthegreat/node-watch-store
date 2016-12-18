@@ -275,10 +275,7 @@ router.get('/thankyou', function(req, res, next){
 });
 
 router.post('/new-menwatch', isAdmin, function(req, res, next){
-console.log(req.body.name);
-  console.log(req.body.name);
 
-  console.log("jwoiefjdskljds")
   var product = new Men ({
 		imagePath: req.body.image,
     secondimagePath: req.body.image2,
@@ -289,16 +286,38 @@ console.log(req.body.name);
     sale: req.body.sale,
 
 	});
-
-
 	product.save(function(err, result){
 		if(err){
 			req.flash('error', err.message);
-			return res.redirect('mens/new')
+			return res.redirect('/admin/new-menwatch')
 		}
 	res.redirect('/admin/Mens-Watches')
 	});
 });
+
+router.post('/new-womenwatch', isAdmin, function(req, res, next){
+
+  var product = new Women ({
+		imagePath: req.body.image,
+    secondimagePath: req.body.image2,
+    thirdimagePath: req.body.image3,
+		title: req.body.name,
+		description: req.body.description,
+		price: req.body.price,
+    sale: req.body.sale,
+
+	});
+	product.save(function(err, result){
+		if(err){
+			req.flash('error', err.message);
+			return res.redirect('/admin/new-womenwatch')
+		}
+	res.redirect('/admin/Womens-Watches')
+	});
+});
+
+
+
 
 module.exports = router;
 
