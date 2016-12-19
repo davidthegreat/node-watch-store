@@ -5,7 +5,7 @@ mongoose.connect('mongodb://heroku_33201xb5:l9kqdokv0b3errs1e08mre8ufv@ds139288.
 
 var mens =  [
   new Men({
-    imagePath: 'https://world-of-watches.herokuapp.com/images/AkribosXXIV.jpg',
+    imagePath: 'https://ak1.ostkcdn.com/images/products/9437322/Akribos-XXIV-Mens-Multifunction-Tachymeter-Stainless-Steel-Bracelet-Watch-6af1007e-3e4a-44eb-b85d-311d70284da5_600.jpg',
     secondimagePath: 'https://world-of-watches.herokuapp.com/images/AkribosXXIV2.jpg',
     thirdimagePath: 'https://world-of-watches.herokuapp.com/images/AkribosXXIV3.jpg',
     title: "Akribos XXIV",
