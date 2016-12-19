@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
       for (var i = 4; i < docs.length; i += chunkSize) {
           productChunks.push(docs.slice(i, i + chunkSize));
       }
-      res.render('index', { title: 'Cool Watches', products: productChunks });
+      res.render('index', { title: 'World of Watches', products: productChunks });
   });
 });
 
@@ -144,7 +144,7 @@ router.get('/cart', function(req, res, next){
 		return res.render('shopping-cart', {products: null});
 	}
 	var cart = new Cart(req.session.cart);
-	res.render('shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice})
+	res.render('shopping-cart', { title: 'World of Watches', products: cart.generateArray(), totalPrice: cart.totalPrice})
 });
 
 /* GET Checkout page. */
@@ -154,7 +154,7 @@ router.get('/checkout', isLoggedIn, function(req, res, next){
 	}
 	var cart = new Cart(req.session.cart);
 	var errMsg = req.flash('error')[0];
-	res.render('checkout', {total: cart.totalPrice, errMsg: errMsg, noError: !errMsg});
+	res.render('checkout', {title: 'World of Watches', total: cart.totalPrice, errMsg: errMsg, noError: !errMsg});
 });
 
 /* POST Checkout page. */
@@ -166,7 +166,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next){
   var cart = new Cart(req.session.cart);
 
   var stripe = require("stripe")(
-    SECRET_KEY
+    'sk_test_mZ8qypXct6PHHRIRjmu33b8K'
   );
 
   stripe.charges.create({
@@ -353,6 +353,6 @@ function isAdmin(req, res, next) {
      next();
    }
    else{
-     res.render('404', {layout: false})
+     res.render('404', {title: 'World of Watches', layout: false})
    }
  }

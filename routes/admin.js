@@ -12,14 +12,14 @@ var Women = require('../app/models/women');
 router.get('/', isAdmin, function(req, res, next) {
   Order.find( function(err, orders) {
     if (err) {
-      res.render('404', {layout: false})
+      res.render('404', { title: 'World of Watches', layout: false})
     }
     var cart;
     orders.forEach(function(order) {
         cart = new Cart(order.cart);
         order.items = cart.generateArray();
     });
-    res.render('admin/index', { orders: orders,layout: false });
+    res.render('admin/index', { title: 'World of Watches', orders: orders,layout: false });
   });
 });
 
@@ -30,7 +30,7 @@ router.get('/Mens-Watches', isAdmin, function(req, res, next){
     for (var i = 4; i < docs.length; i += chunkSize) {
         productChunks.push(docs.slice(i, i + chunkSize));
     }
-    res.render('admin/men', { title: 'Cool Watches', products: productChunks,layout: false });
+    res.render('admin/men', { title: 'World of Watches', products: productChunks,layout: false });
   });
 });
 
@@ -42,7 +42,7 @@ router.get('/Womens-Watches', isAdmin, function(req, res, next){
       for (var i = 4; i < docs.length; i += chunkSize) {
           productChunks.push(docs.slice(i, i + chunkSize));
       }
-      res.render('admin/women', { title: 'Cool Watches', products: productChunks,layout: false });
+      res.render('admin/women', { title: 'World of Watches', products: productChunks,layout: false });
   });
 });
 
@@ -53,7 +53,7 @@ router.get('/Kids-Watches', isAdmin, function(req, res, next){
       for (var i = 4; i < docs.length; i += chunkSize) {
           productChunks.push(docs.slice(i, i + chunkSize));
       }
-      res.render('admin/kid', { title: 'Cool Watches', products: productChunks,layout: false });
+      res.render('admin/kid', { title: 'World of Watches', products: productChunks,layout: false });
   });
 });
 
