@@ -26,14 +26,14 @@ router.get('/MyAcount', isLoggedIn, function(req, res, next){
         cart = new Cart(order.cart);
         order.items = cart.generateArray();
     });
-    res.render('user/profile',{tile:'Watch Store', successMsg: successMsg, noMessages: !successMsg, orders: orders} );
+    res.render('user/profile',{ title: 'World of Watches', successMsg: successMsg, noMessages: !successMsg, orders: orders} );
   });
 });
 
 /* GET users registration listing. */
 router.get('/register', notLoggedIn, function(req, res, next) {
 var messages = req.flash('error');
-res.render('user/signup',{csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+res.render('user/signup',{ title: 'World of Watches', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
 });
 
 /* post users registration  listing. */
@@ -46,14 +46,14 @@ router.post('/register', notLoggedIn, passport.authenticate('local.signup',{
 		req.session.oldUrl = null;
 		res.redirect(oldUrl);
 	} else {
-		res.redirect('/users/MyAcount')
+		res.redirect('/')
 	}
 });
 
 /* GET users signin  listing. */
 router.get('/signin', notLoggedIn, function(req, res, next) {
   var messages = req.flash('error');
-  res.render('user/signin',{csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+  res.render('user/signin',{title: 'World of Watches', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
 });
 
 /* post users signin  listing. */
@@ -66,7 +66,7 @@ router.post('/signin',notLoggedIn,  passport.authenticate('local.signin',{
 		req.session.oldUrl = null;
 		res.redirect(oldUrl);
 	} else {
-		res.redirect('/users/MyAcount')
+		res.redirect('/')
 	}
 });
 
@@ -76,9 +76,9 @@ router.get('/logout', isLoggedIn, function (req, res, next) {
   res.redirect('/')
 });
 
-/* GET contact page. */
+/* GET 404 page. */
 router.get('*', function(req, res, next){
-  res.render('404', {layout: false})
+  res.render('404', {title: 'World of Watches', layout: false})
 });
 
 

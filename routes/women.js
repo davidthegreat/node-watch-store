@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
       for (var i = 0; i < docs.length; i += chunkSize) {
           productChunks.push(docs.slice(i, i + chunkSize));
       }
-      res.render('women/index', { title: 'Cool Watches', products: productChunks });
+      res.render('women/index', { title: 'World of Watches', products: productChunks });
   });
 });
 
@@ -24,7 +24,7 @@ router.get('/:id', function(req, res, next){
       var product = [];
       var c = products;
       product.push(c);
-      res.render('women/show', {product: product});
+      res.render('women/show', {title: 'World of Watches', product: product});
     }else{
       return console.log(err);
     }
