@@ -1950,13 +1950,9 @@ h3.ghj {
 .header-bottom {
     padding: 11px 0px;
 }
-.header-right {
-    padding: 0;
-    width: 28%;
-    float: right;
-}
+
 .header-left {
-    width: 72%;
+    width: 100%;
     float: left;
 }
 .search-bar input[type="submit"] {
@@ -2637,11 +2633,9 @@ a.simpleCart_empty {
 .memenu>li.showhide {
     height: 40px !important;
 }
-.header-right {
-    width: 35%;
-}
+
 .header-left {
-    width: 65%;
+    width: 100%;
 }
 .search-bar input[type="text"] {
     padding: 7px 45px 7px 8px;
@@ -2785,12 +2779,10 @@ a.simpleCart_empty {
     padding: 8px 25px !important;
 }
 .header-left {
-    width: 60%;
+    width: 100%;
     padding-right: 10px;
 }
-.header-right {
-    width: 40%;
-}
+
 .search-bar {
     margin-top: 3px;
 }
