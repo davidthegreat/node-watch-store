@@ -27,7 +27,7 @@ router.get('/Mens-Watches', isAdmin, function(req, res, next){
   Men.find(function(err, docs) {
     var productChunks = [];
     var chunkSize = 3;
-    for (var i = 4; i < docs.length; i += chunkSize) {
+    for (var i = 0; i < docs.length; i += chunkSize) {
         productChunks.push(docs.slice(i, i + chunkSize));
     }
     res.render('admin/men', { title: 'World of Watches', products: productChunks,layout: false });
@@ -37,22 +37,22 @@ router.get('/Mens-Watches', isAdmin, function(req, res, next){
 
 router.get('/Womens-Watches', isAdmin, function(req, res, next){
   Women.find(function(err, docs) {
-      var productChunks = [];
-      var chunkSize = 3;
-      for (var i = 4; i < docs.length; i += chunkSize) {
-          productChunks.push(docs.slice(i, i + chunkSize));
-      }
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 0; i < docs.length; i += chunkSize) {
+        productChunks.push(docs.slice(i, i + chunkSize));
+    }
       res.render('admin/women', { title: 'World of Watches', products: productChunks,layout: false });
   });
 });
 
 router.get('/Kids-Watches', isAdmin, function(req, res, next){
   Kid.find(function(err, docs) {
-      var productChunks = [];
-      var chunkSize = 3;
-      for (var i = 4; i < docs.length; i += chunkSize) {
-          productChunks.push(docs.slice(i, i + chunkSize));
-      }
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 0; i < docs.length; i += chunkSize) {
+        productChunks.push(docs.slice(i, i + chunkSize));
+    }
       res.render('admin/kid', { title: 'World of Watches', products: productChunks,layout: false });
   });
 });
