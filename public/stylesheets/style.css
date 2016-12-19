@@ -833,63 +833,6 @@ a.mask {
     padding-bottom: 3em;
 }
 /*--information-end--*/
-/*--footer-starts--*/
-.footer-left p{
-	color:#000;
-	font-size:15px;
-}
-.footer-left p a{
-	color:#000;
-}
-.footer-left input[type="text"] {
-    width: 47%;
-    margin-right: 10px;
-    color: #000;
-    font-size: 11px;
-    background: none;
-    padding: 8px 10px;
-    outline: none;
-    border: none;
-    border: 1px solid #000;
-}
-.footer-left input[type=submit] {
-    color: #000;
-    padding: 6px 20px;
-    font-size: 13px;
-    cursor: pointer;
-    border: 1px solid #000;
-    background: none;
-    outline: none;
-}
-.footer-left input[type=submit]:hover{
-    background: #73B6E1;
-	color:#fff;
-	border: 1px solid #73B6E1;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
-.footer{
-	padding:3em 0px;
-}
-.footer-right {
-    text-align: right;
-}
-.footer-right p {
-    margin: 8px 0 0 0;
-    font-size: 13px;
-    color: #000;
-}
-.footer-right p a{
-	color: #000;
-}
-.footer-right p a:hover{
-	color: #73B6E1;
-	text-decoration:none;
-}
-/*--footer-end--*/
 /*--product-page-starts--*/
 .prdt{
 	padding:6em 0px;
@@ -2220,19 +2163,6 @@ figure.effect-bubba p {
 .infor-top {
     padding-bottom: 2em;
 }
-.footer-left {
-    text-align: center;
-}
-.footer-right {
-    margin-top: 22px;
-	text-align:center;
-}
-.footer-right p {
-    margin: 0px 0 0 0;
-}
-.footer {
-    padding: 2em 0px;
-}
 .single-top-right {
     margin-top: 4%;
     width: 100%;
@@ -2706,17 +2636,6 @@ figure.effect-bubba p {
 .infor-left h3 {
     font-size: 1.3em;
 }
-.footer-right {
-    margin-top: 10px;
-}
-.footer-left input[type="text"] {
-    width: 55%;
-    margin-right: 5px;
-    padding: 7px 10px;
-}
-.footer {
-    padding: 1.5em 0px;
-}
 .dropdown div {
     left: 0px;
     top: 27px;
@@ -2868,22 +2787,6 @@ figure.effect-bubba p {
 }
 .infor-top {
     padding-bottom: 1.2em;
-}
-.footer-left input[type="text"] {
-    width: 68%;
-    margin-right: 3px;
-    padding: 6px 10px;
-    font-size: 9px;
-}
-.footer-left input[type=submit] {
-    padding: 3px 10px 6px 10px;
-    font-size: 11px;
-}
-.footer-right p {
-    font-size: 12px;
-}
-.footer {
-    padding: 1.2em 0px;
 }
 .p-left {
     width: 100% !important;
@@ -3127,4 +3030,45 @@ a {
 
 .thankcenter{
 	text-align: center;
+}
+
+.content-padding {
+  padding-left: 11%;
+  padding-right: 11%;
+}
+
+@media (max-width: 1024px) {
+  .content-padding {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+@media (max-width: 767px) {
+  .content-padding {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+
+footer {
+  margin-top: 50px;
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: 90%;
+  margin-bottom: 20px;
+  border-top: 1px solid #dedede;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer p {
+  text-align: center;
+  color: #999;
+  letter-spacing: 0.3px;
+  font-size: 12px;
+  padding-bottom: 20px;
 }
