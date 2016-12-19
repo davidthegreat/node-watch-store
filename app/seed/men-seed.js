@@ -1,7 +1,7 @@
 var Men = require('../models/men');
 var mongoose = require('mongoose');
 
-mongoose.connect('localhost:27017/watch');
+mongoose.connect('mongodb://heroku_33201xb5:l9kqdokv0b3errs1e08mre8ufv@ds139288.mlab.com:39288/heroku_33201xb5');
 
 var mens =  [
   new Men({
