@@ -55,7 +55,7 @@ router.get('/mens-watches-cart/:id', function(req, res, next){
 });
 
 /* GET mens watches  add to cart from the index page. */
-router.get('/mens-watches-carts/:id', function(req, res, next){
+router.get('/mens-watches-cartss/:id', function(req, res, next){
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : {});
 
@@ -66,7 +66,7 @@ router.get('/mens-watches-carts/:id', function(req, res, next){
     cart.add(product, product.id);
     req.session.cart = cart;
     console.log(req.session.cart)
-    res.redirect('/Mens-Watches/')
+    res.redirect('/Mens-Watches')
   })
 });
 
