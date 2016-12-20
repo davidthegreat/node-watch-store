@@ -21,15 +21,9 @@ var kid = require('./routes/kid');
 
 var app = express();
 
-app.get('*',function(req,res,next){
-  if(req.headers['x-forwarded-proto']!='https'&&process.env.NODE_ENV === 'production')
-    res.redirect('https://'+req.hostname+req.url)
-  else
-    next() /* Continue to other routes if we're not redirecting */
-});
-
-
+// mongoose.connect('localhost:27017/watch');
 mongoose.connect('mongodb://heroku_33201xb5:l9kqdokv0b3errs1e08mre8ufv@ds139288.mlab.com:39288/heroku_33201xb5');
+
 require('./app/config/passport');
 
 // view engine setup
