@@ -33,7 +33,7 @@ var mens =  [
     sale: 'none',
   }),
   new Men({
-    imagePath: 'https://ak1.ostkcdn.com/images/products/15266181_ORIGINAL_1_600.jpg',
+    imagePath: 'https://ak1.ostkcdn.com/images/products/15266181_ORIGINAL_2_600.jpg',
     secondimagePath: 'https://ak1.ostkcdn.com/images/products/15266181_ORIGINAL_4_600.jpg',
     thirdimagePath: 'https://ak1.ostkcdn.com/images/products/15266181_ORIGINAL_7_600.jpg',
     title: "Michael Kors MK8281",
