@@ -6,18 +6,18 @@ mongoose.connect('mongodb://heroku_33201xb5:l9kqdokv0b3errs1e08mre8ufv@ds139288.
 
 var mens =  [
   new Men({
-    imagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338705/7654988e-c62d-11e6-98fe-42fdf2a93f4d.jpg',
-    secondimagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338704/764fe302-c62d-11e6-82b4-2c726404479a.jpg',
-    thirdimagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338703/76492d28-c62d-11e6-9475-a72bbf1b945c.jpg',
+    imagePath: 'https://ak1.ostkcdn.com/images/products/9437322/Akribos-XXIV-Mens-Multifunction-Tachymeter-Stainless-Steel-Bracelet-Watch-6af1007e-3e4a-44eb-b85d-311d70284da5_600.jpg',
+    secondimagePath: 'https://ak1.ostkcdn.com/images/products/9437322/Akribos-XXIV-Mens-Multifunction-Tachymeter-Stainless-Steel-Bracelet-Watch-d6d50b09-6e72-4769-9aaa-70670c2b2d90_600.jpg',
+    thirdimagePath: 'https://ak1.ostkcdn.com/images/products/9437322/Akribos-XXIV-Mens-Multifunction-Tachymeter-Stainless-Steel-Bracelet-Watch-6b8bcb18-c4d1-4d5f-b3f5-0f3bfddf88ae_600.jpg',
     title: "Akribos XXIV",
     description: "This stainless steel Akribos watch is the perfect complement to any ensemble. A sleek black finish and modern, masculine design fits both for formal and casual affairs. Complete with Swiss quartz movement for reliability and accuracy, as well as a multi-function tachymeter and a day and date indicator make this watch just as practical an addition to your collection as it is stylish.",
     price: 49,
     sale: 'show',
   }),
   new Men({
-    imagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338812/6cc6c99e-c62e-11e6-85c9-81cc2242f133.jpg',
-    secondimagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338813/6cc79c66-c62e-11e6-8691-e2e9c4af1079.jpg',
-    thirdimagePath: 'https://cloud.githubusercontent.com/assets/9848162/21338811/6cbdf56c-c62e-11e6-81c6-7eeba3b94b63.jpg',
+    imagePath: 'https://ak1.ostkcdn.com/images/products/6471133/Movado-Collection-Mens-or-Womens-Stainless-Steel-and-Leather-Quartz-Watch-f2230ea7-77fb-46f5-a1f7-dbcc17718ae8_600.jpg',
+    secondimagePath: 'https://ak1.ostkcdn.com/images/products/6471133/Movado-Collection-Mens-or-Womens-Stainless-Steel-and-Leather-Quartz-Watch-e29afb7f-772f-434e-99a9-834983b5680b_600.jpg',
+    thirdimagePath: 'https://ak1.ostkcdn.com/images/products/6471133/Movado-Collection-Mens-or-Womens-Stainless-Steel-and-Leather-Quartz-Watch-a8bf6b94-30f0-4441-9543-4cca8a76f051_600.jpg',
     title: "Movado Collection",
     description: "Wear this sleek, modern watch with almost any ensemble in your closet, thanks to its versatile black dial and supple black leather strap. A polished stainless steel caseback, silvertone hands and a Movado silvertone signature dot offer exceptional contrast for a look that works just as well at the office as for formal events and special occasions.",
     price: 189,
