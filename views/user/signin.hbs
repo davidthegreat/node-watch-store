@@ -22,8 +22,7 @@
 			{{/if}}
 		</div>
 		<div class="account-main">
-			<div class="col-md-6 account-left">
-				<h3>Existing User</h3>
+			<div class="col-md-12 account-left">
 				<div class="account-bottom">
 					<form action="/users/signin" method="post">
             <div class="form-group">
@@ -41,13 +40,14 @@
 										<input type="submit" value="Submit">
 						</div>
           </form>
+
 				</div>
+				<br>
+				<br>
+				<h3>Don't have an account? <a href="/users/register">Sign up!</a></h3>
+
 			</div>
-			<div class="col-md-6 account-right account-left">
-				<h3>New User? Create an Account</h3>
-				<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-				<a href="/users/register">Create an Account</a>
-			</div>
+
 			<div class="clearfix"></div>
 		</div>
 	</div>
