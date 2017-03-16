@@ -14,10 +14,10 @@ var kids =  [
     price: 19,
     sale: 'show',
     starone: 'show',
-    startwo: 'hide',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    startwo: 'none',
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Kid({
     imagePath: 'https://ak1.ostkcdn.com/images/products/12932798/Dakota-Kids-Digital-Sting-Ray-Sport-Watch-f2a2610e-9cbb-4d4a-8122-3e4c9c533f01_600.jpg',
@@ -29,9 +29,9 @@ var kids =  [
     sale: 'show',
     starone: 'show',
     startwo: 'show',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Kid({
     imagePath: 'https://ak1.ostkcdn.com/images/products/9276457/Lily-Nily-Kids-Plastic-and-Stainless-Steel-Assorted-Candies-Watch-c8e83f86-d6dd-4b75-a7e0-1e4100a95e7f_600.jpg',
@@ -44,8 +44,8 @@ var kids =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Kid({
     imagePath: 'https://ak1.ostkcdn.com/images/products/13266814/Dakota-Kids-and-Teens-Plastic-and-Stainless-Steel-Midsize-Fun-Color-Digital-Watch-830dfd78-1290-43c8-8848-3264ca4e2f41_600.jpg',
@@ -59,7 +59,7 @@ var kids =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Kid({
     imagePath: 'https://ak1.ostkcdn.com/images/products/9481569/Dakota-Fusion-Kids-Red-Digital-Racecar-Watch-1f367cae-414a-4079-804c-d343147c29b6_600.jpg',
@@ -152,7 +152,7 @@ var kids =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Kid({
     imagePath: 'https://ak1.ostkcdn.com/images/products/9218627/Girls-Pink-Princess-Time-Teacher-Watch-7822fa81-5255-4cc8-94aa-0b4984082de5_600.jpg',
@@ -165,8 +165,8 @@ var kids =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
 ];
 

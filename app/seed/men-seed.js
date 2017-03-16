@@ -16,8 +16,8 @@ var mens =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/6471133/Movado-Collection-Mens-or-Womens-Stainless-Steel-and-Leather-Quartz-Watch-f2230ea7-77fb-46f5-a1f7-dbcc17718ae8_600.jpg',
@@ -45,7 +45,7 @@ var mens =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/15266181_ORIGINAL_2_600.jpg',
@@ -72,8 +72,8 @@ var mens =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/9196993/Fossil-Mens-CH2564-Black-Leather-Quartz-Watch-2bea15e6-9076-486e-868f-b47c8020702d_600.jpg',
@@ -86,8 +86,8 @@ var mens =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/8091113/Akribos-XXIV-Mens-Antique-Mechanical-Skeleton-Chain-Pocket-Gold-Tone-Watch-c6a6c9b4-1570-4991-bc49-c1ce0e0f750e_600.jpg',
@@ -99,9 +99,9 @@ var mens =  [
     sale: 'show',
     starone: 'show',
     startwo: 'show',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/8201954/Stuhrling-Original-Mens-Regatta-Espora-Swiss-Quartz-Divers-Bracelet-Watch-31a30e6c-99ea-49bb-a63f-0019be874c6d_600.jpg',
@@ -115,7 +115,7 @@ var mens =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/9027440/Stuhrling-Original-Mens-Albion-Swiss-Quartz-Stainless-Steel-Bracelet-Watch-4488330a-955f-4dfe-a0b5-d654f8ba7205_600.jpg',
@@ -127,9 +127,9 @@ var mens =  [
     sale: 'none',
     starone: 'show',
     startwo: 'show',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/8815185/Timex-Mens-T49963-Expedition-Scout-Brown-Leather-Strap-Watch-965925ab-6b27-4d94-a565-9bcccf3bae35_600.jpg',
@@ -140,10 +140,10 @@ var mens =  [
     price: 35,
     sale: 'show',
     starone: 'show',
-    startwo: 'hide',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    startwo: 'none',
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Men({
     imagePath: 'https://ak1.ostkcdn.com/images/products/11041644/Jules-Breting-Adama-Stainless-Steel-Mens-Swiss-Chronograph-Blue-Dial-Watch-a8171cb8-9a03-44a3-a7b5-4f97445b6895_600.jpg',

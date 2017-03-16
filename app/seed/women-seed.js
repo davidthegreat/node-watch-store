@@ -44,7 +44,7 @@ var womens =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Women({
     imagePath: 'https://ak1.ostkcdn.com/images/products/10277428/SO-CO-New-York-Womens-SoHo-Crystal-Cut-Dial-Stainless-Steel-Mesh-Watch-f075c583-36d8-48e9-9b83-32369b78ecb2_600.jpg',
@@ -66,8 +66,8 @@ var womens =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Women({
     imagePath: 'https://ak1.ostkcdn.com/images/products/16363011_ORIGINAL_0_600.jpg',
@@ -103,8 +103,8 @@ var womens =  [
     starone: 'show',
     startwo: 'show',
     starthree: 'show',
-    starfour: 'hide',
-    starfive: 'hide'
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Women({
     imagePath: 'https://ak1.ostkcdn.com/images/products/2564415/Geneva-Womens-Platinum-Polished-Bangle-Watch-1279b107-bbf6-49d1-9497-e860edc4902a_600.jpg',
@@ -116,9 +116,9 @@ var womens =  [
     sale: 'show',
     starone: 'show',
     startwo: 'show',
-    starthree: 'hide',
-    starfour: 'hide',
-    starfive: 'hide'
+    starthree: 'none',
+    starfour: 'none',
+    starfive: 'none'
   }),
   new Women({
     imagePath: 'https://ak1.ostkcdn.com/images/products/6293772/Burgi-Womens-Crystal-Mesh-Bracelet-Quartz-Watch-c2b38b81-a2f8-4003-9830-199cbcd3e931_600.jpg',
@@ -132,7 +132,7 @@ var womens =  [
     startwo: 'show',
     starthree: 'show',
     starfour: 'show',
-    starfive: 'hide'
+    starfive: 'none'
   }),
   new Women({
     imagePath: 'https://ak1.ostkcdn.com/images/products/8700606/Michael-Kors-Womens-MK3192-Darci-Rose-Goldtone-Stainless-Steel-Watch-713723a5-169e-4e2b-8289-4ca8c165cfde_600.jpg',
