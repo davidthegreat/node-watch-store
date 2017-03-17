@@ -3090,3 +3090,7 @@ footer p {
 	height: 100%;
 	z-index: 9999;
 }
+
+.orderscenter{
+	text-align: center;
+}
