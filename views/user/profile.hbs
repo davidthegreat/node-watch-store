@@ -17,6 +17,7 @@
 </div>
 <div class="row">
 	<div class="col-md-6 col-md-offset-2">
+    {{#if orders}}
     <div class="ckeck-top heading">
       <h2>My Orders</h2>
     </div>
@@ -34,13 +35,18 @@
 	  				{{/each}}
 				</ul>
 			</div>
-<h4 class="panel-padding">Order placed:</h4>
-<b> <h2 style="font-family:new century schoolbook; padding-top: 0px; " class="panel-padding">{{moment this.created_at format="MMMM Do YYYY, HH:mm" }}</h2>	</b>
+      <h4 class="panel-padding">Order placed:</h4>
+      <b> <h2 style="font-family:new century schoolbook; padding-top: 0px; " class="panel-padding">{{moment this.created_at format="MMMM Do YYYY, HH:mm" }}</h2>	</b>
 
 
 		<div class="panel-footer"><strong>Total Price: ${{this.cart.totalPrice}}</strong></div>
 		</div>
 		{{/each}}
+
+    {{else}}
+    <h2>Empty</h2>
+    {{/if}}
+
 	</div>
 </div>
 
